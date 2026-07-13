@@ -1,4 +1,14 @@
+import rocketLogosm from '../assets/banner/banner-logo-rocket-sm.svg'
+import rocketLogolg from '../assets/banner/banner-logo-rocket-lg.svg'
+import rocketBtnsm from '../assets/banner/banner-btn-rocket-sm.svg'
+import rocketBtnlg from '../assets/banner/banner-btn-rocket-lg.svg'
+import coworkingLogosm from '../assets/banner/banner-logo-coworking-sm.svg'
+import coworkingLogolg from '../assets/banner/banner-logo-coworking-lg.svg'
+import coworkingBtnsm from '../assets/banner/banner-btn-coworking-sm.svg'
+import coworkingBtnlg from '../assets/banner/banner-btn-coworking-lg.svg'
+
 function Header() {
+  const imageUrl = "../assets/banner/";
   return (
     <>
       <header className="flex justify-center py-2 font-bold [&>p]:px-4 [&>p]:py-3 text-neutral-700 whitespace-nowrap overflow-hidden">
@@ -13,7 +23,7 @@ function Header() {
               <a href="#">
                 <div className="flex items-center mt-6">
                   <img
-                    src="../src/assets/banner/banner-logo-rocket-sm.svg"
+                    src={ rocketLogosm }
                     alt="Banner logo"
                     className="ml-6 mr-2"
                   />
@@ -25,7 +35,7 @@ function Header() {
                   Bootcamp Rocket
                 </h2>
                 <img
-                  src="../src/assets/banner/banner-btn-rocket-sm.svg"
+                  src={ rocketBtnsm }
                   alt="Banner button"
                   className="absolute -right-10 top-7"
                 />
@@ -37,7 +47,7 @@ function Header() {
               <a href="#">
                 <div className="flex items-center mt-6">
                   <img
-                    src="../src/assets/banner/banner-logo-coworking-sm.svg"
+                    src={ coworkingLogosm }
                     alt="Banner logo"
                     className="ml-6 mr-2"
                   />
@@ -49,7 +59,7 @@ function Header() {
                   Co-working Space
                 </h2>
                 <img
-                  src="../src/assets/banner/banner-btn-coworking-sm.svg"
+                  src={ coworkingBtnsm }
                   alt="Banner button"
                   className="absolute -right-10 top-7"
                 />
@@ -67,7 +77,7 @@ function Header() {
                 Bootcamp Rocket
               </h2>
               <img
-                src="../src/assets/banner/banner-logo-rocket-lg.svg"
+                src={ rocketLogolg }
                 alt="Rocket logo"
                 className="max-w-31 mt-6 mb-4"
               />
@@ -77,7 +87,7 @@ function Header() {
                 <p># 帶你翻轉人生！</p>
               </div>
               <img
-                src="../src/assets/banner/banner-btn-rocket-lg.svg"
+                src= {rocketBtnlg }
                 alt="Rocket button"
                 className="absolute -bottom-15 left-1/2 -translate-x-1/2"
               />
@@ -95,7 +105,7 @@ function Header() {
                 Co-working Space
               </h2>
               <img
-                src="../src/assets/banner/banner-logo-coworking-lg.svg"
+                src={ coworkingLogolg }
                 alt="Rocket logo"
                 className="max-w-31 mt-6 mb-4"
               />
@@ -105,7 +115,7 @@ function Header() {
                 <p># 等你來一同交流成長</p>
               </div>
               <img
-                src="../src/assets/banner/banner-btn-coworking-lg.svg"
+                src= { coworkingBtnlg }
                 alt="Rocket button"
                 className="absolute -bottom-15 left-1/2 -translate-x-1/2"
               />
