@@ -2,6 +2,11 @@ import backgroundImage from "../assets/rocket-page/training/training-bg.png"
 import trainingFrontend from "../assets/rocket-page/training/training-img-frontend-lg.svg"
 import trainingBackend from "../assets/rocket-page/training/training-img-backend-lg.svg"
 import trainingUI from "../assets/rocket-page/training/training-img-ui-lg.svg"
+import coachWeijie from "../assets/rocket-page/coach/coach-weijie.svg"
+import coachYinmin from "../assets/rocket-page/coach/coach-yinmin.svg"
+import coachJustin from "../assets/rocket-page/coach/coach-justin.svg"
+import coachCasper from "../assets/rocket-page/coach/coach-casper.svg"
+import callToAction from "../assets/rocket-page/ic-go-rocket.svg"
 
 const AboutPositons = ({ title, reverse, aboutTitle, positionContent, positionHighlight, requirements, skills, img, imgAlt }) => {
   return (
@@ -54,6 +59,14 @@ const AboutPositons = ({ title, reverse, aboutTitle, positionContent, positionHi
   )
 };
 
+const AboutCoach = ({ img, imgAlt }) => {
+  return (
+    <a href="#">
+      <img src={ img } alt={ imgAlt }/>
+    </a>
+  )
+}
+
 function AboutTraining() {
   const programs = [
     {
@@ -62,7 +75,7 @@ function AboutTraining() {
       reverse: false,
       aboutTitle: "關於前端",
       positionContent: "主要專精 JavaScript 前端 (65%)、後端 (35%) 開發，投入語言為 HTML、CSS、JavaScript，",
-      positionHighlight: "適合有一些 HTML、CSS、JS 基礎的學員報名。",
+      positionHighlight: "適合有一些 HTML、CSS、JS 基礎的學員報名",
       requirements: [
         <>會用 CSS Flexbox 排過網頁，有 RWD 響應式網頁概念，需提交 CSS切版作品，請
         <span className="font-bold bg-[linear-gradient(to_top,var(--color-rocket-yellow)_50%,transparent_50%)]">
@@ -109,11 +122,33 @@ function AboutTraining() {
       img: trainingUI,
       imgAlt : "training UI image"
     }
+  ];
+  const coaches = [ 
+    {
+      id: 1,
+      img: coachWeijie,
+      imgAlt: "Weijie image"
+    },
+    {
+      id: 2,
+      img: coachYinmin,
+      imgAlt: "Yinmin image"
+    },
+    {
+      id: 3,
+      img: coachJustin,
+      imgAlt: "Justin image",
+    },
+    {
+      id: 4,
+      img: coachCasper,
+      imgAlt: "Casper image",
+    }
   ]
   return (
     <>
       <section className="flex flex-col items-center bg-neutral-100 relative">
-        <h2 className="font-bold text-mobile-h2 md:text-desktop-h2 text-neutral-700 md-3 absolute -top-5">
+        <h2 className="font-bold text-mobile-h2 md:text-desktop-h2 text-neutral-700 mb-3 absolute -top-5">
           關於培訓
         </h2>
         <div className="flex justify-between shadow-[0px_2px_4px_0px_#E8E8E8] px-5 py-2 md:py-3 rounded-[50px] mt-[38px] bg-neutral-white">
@@ -136,9 +171,73 @@ function AboutTraining() {
             })
           }
         </div>
+        <div className="mt-10 mb-[66px] pl-[49px] md:pl-0 md:mt-16 md:mb-32">
+          <h2 className="font-bold text-neutral-700 text-mobile-h3 md:text-desktop-h3">
+            教練團
+          </h2>
+          <div className="flex gap-6 mb-7">
+            {
+              coaches.map((coach) => {
+                return <AboutCoach key={ coach.id } { ...coach } />
+              })
+            }
+          </div>
+          <h3 className="font-bold text-mobile-h4 md:text-desktop-body1 mb-3">
+            前端教練 | 廖洧杰
+          </h3>
+          <ul className="list-disc list-inside font-normal text-desktop-body3 text-neutral-700 [&>li]:pl-4 [&>li]:-indent-4">
+            <li>
+              2016-2022 過往經歷：
+              <a
+                href="https://www.hexschool.com/"
+                target="_blank"
+                className="underline"
+              >
+                六角學院校長
+              </a>
+              、
+              <a
+                href="https://www.facebook.com/profile.php?id=100039975056467#"
+                target="_blank"
+                className="underline"
+              >
+                高雄火箭隊
+              </a>
+              前端教練
+            </li>
+            <li>2013-2019 成功案例：協助無資訊背景轉職工程師人數超過 500 位</li>
+            <li>2013-2019 授課人數：線上+線下授課學員超過 25,000 位</li>
+            <li>
+              2014-2019 線下授課：
+              <a
+                href="https://www.im.nuk.edu.tw/?page_id=95"
+                target="_blank"
+                className="underline"
+              >
+                高雄大學前端領域兼任講師
+              </a>
+            </li>
+            <li>
+              2007-2019 實務經驗：經手超過 100
+              個實際專案，其領域不乏中小企業、政府專案、銀行系統
+            </li>
+          </ul>
+        </div>
+        <a
+          href="#"
+          className="max-w-[332px] md:max-w-[1076px] w-full bg-rocket-100 flex justify-center rounded-border-m border-2 border-neutral-700 absolute -bottom-11 py-5 md:py-6 group"
+        >
+          <h3 className="font-bold text-mobile-h3 md:text-desktop-h3 text-neutral-700">
+            馬上報名！
+          </h3>
+          <img
+            src={ callToAction }
+            alt="Go button logo"
+            className="hidden group-hover:block absolute right-10 bottom-2 md:right-1/3 md:bottom-4"
+          />
+        </a>
       </section>
     </>
-
   )
 }
 
