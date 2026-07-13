@@ -5,7 +5,6 @@ const caseImages = import.meta.glob(
 
 function SuccessCase() {
   return (
-    <>
     <section className="flex flex-col md:items-center mt-12 md:mt-23 mb-23 md:mb-30 gap-7 overflow-hidden">
       <h2 className="font-bold text-mobile-h2 md:text-desktop-h2 text-neutral-700 m-auto">
         成功案例
@@ -16,7 +15,6 @@ function SuccessCase() {
         ))}
       </div>
     </section>
-    </>
   )
 }
 
