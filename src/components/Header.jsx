@@ -1,3 +1,4 @@
+import bannerBg from '../assets/banner/banner-bg.png'
 import rocketLogosm from '../assets/banner/banner-logo-rocket-sm.svg'
 import rocketLogolg from '../assets/banner/banner-logo-rocket-lg.svg'
 import rocketBtnsm from '../assets/banner/banner-btn-rocket-sm.svg'
@@ -8,7 +9,6 @@ import coworkingBtnsm from '../assets/banner/banner-btn-coworking-sm.svg'
 import coworkingBtnlg from '../assets/banner/banner-btn-coworking-lg.svg'
 
 function Header() {
-  const imageUrl = "../assets/banner/";
   return (
     <>
       <header className="flex justify-center py-2 font-bold [&>p]:px-4 [&>p]:py-3 text-neutral-700 whitespace-nowrap overflow-hidden">
@@ -16,7 +16,7 @@ function Header() {
         <p>- 火箭隊培訓營 Rocket -</p>
         <p>- 共同空間 Co-working space -</p>
       </header>
-      <section className="bg-[url(../src/assets/banner/banner-bg.png)]">
+      <section style={{ backgroundImage: `url(${bannerBg})` }}>
         <div className="flex md:hidden flex-col items-center py-15 gap-[46px]">
           <div className="pr-10">
             <div className="max-w-[294px] bg-neutral-white rounded-border-m border-2 border-neutral-300 relative">
@@ -87,7 +87,7 @@ function Header() {
                 <p># 帶你翻轉人生！</p>
               </div>
               <img
-                src= {rocketBtnlg }
+                src= { rocketBtnlg }
                 alt="Rocket button"
                 className="absolute -bottom-15 left-1/2 -translate-x-1/2"
               />
