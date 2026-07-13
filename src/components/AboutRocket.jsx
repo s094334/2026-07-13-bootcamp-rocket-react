@@ -41,7 +41,7 @@ function AboutRocket() {
       id: 2,
       title: "後端工程師",
       skills: ["C#", ".Net"],
-      enTitle: "Back-end engineer engineer",
+      enTitle: "Back-end engineer",
       imgUrl: aboutBackend,
       imgAlt: "Back-end engineer image"
     },{
