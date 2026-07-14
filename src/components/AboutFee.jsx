@@ -8,7 +8,7 @@ const FaqItem = ({ numberImg, index, question, answer}) => {
   return (
     <div>
       <div className="max-w-[856px]">
-        <div className="flex gap-8 p-5 border-b-2 border-neutral-200">
+        <div className={`flex gap-8 p-5 border-b-2 border-neutral-200 ${ index === 0 ? "border-t-2" : "" }`}>
           <img
             src={ numberImg }
             alt={ `No.${ index + 1 } logo` }
