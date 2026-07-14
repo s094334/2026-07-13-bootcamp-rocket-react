@@ -13,7 +13,7 @@ const AboutArea = ({ reverse, img, title, description }) => {
     <div className={`flex flex-col ${ reverse ? "md:flex-row-reverse" : "md:flex-row" } justify-center items-center gap-4 md:gap-10`}>
       <img
         src={ img }
-        alt="Rest space image"
+        alt={`${ title } image`}
         className="min-w-[332px] md:max-w-[526px] flex-1"
       />
       <div className="md:max-w-[494px] flex flex-col gap-2 md:gap-5 flex-1 w-full">
@@ -129,7 +129,7 @@ function SpaceDescription() {
           <h3 className="font-bold text-mobile-h4 w-fit md:text-desktop-h4 bg-[linear-gradient(to_top,var(--color-rocket-yellow)_50%,transparent_50%)] leading-none my-4 md:mb-6">
             #服務
           </h3>
-          <div className="flex flex-col gap-7 pt-3 md:grid md:grid-cols-3 gap-7 md:justify-items-center">
+          <div className="flex flex-col gap-7 pt-3 md:grid md:grid-cols-3 md:justify-items-center">
             { services.map((service) => {
               return <AboutService key={ service.id } { ...service }/>
             })}
