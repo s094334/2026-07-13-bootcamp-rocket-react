@@ -1,5 +1,5 @@
-import mapImgLg from "../src/assets/space-page/map-lg.png"
-import mapImgSm from "../src/assets/space-page/map-sm.png" 
+import mapImgLg from "../assets/space-page/map-lg.png"
+import mapImgSm from "../assets/space-page/map-sm.png" 
 
 
 function SpaceIntro() {
