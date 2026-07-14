@@ -51,7 +51,7 @@ function SpaceDescription() {
     {
       id: 1,
       reverse: false,
-      img: discussSpace,
+      img: restSpace,
       title: "很 chill 的休憩區",
       description: (<>我們貼心提供{" "}
         <span className="font-bold">飲水機、冰箱、微波爐、果汁機、膠囊咖啡機</span>{" "}
@@ -61,7 +61,7 @@ function SpaceDescription() {
     {
       id: 2,
       reverse: true,
-      img: restSpace,
+      img: discussSpace,
       title: "舒適沙發討論區",
       description: "如果你有想要與夥伴們討論事情這裡也很適合三、五人一起共同開會討論哦！"
     },
@@ -70,9 +70,9 @@ function SpaceDescription() {
       reverse: false,
       img: workSpace,
       title: "進駐者區域",
-      description: (<>我們的目標是凝聚更多開發者，為他們提供一個充滿活力的交流空間。在這裡，開發者可以互相學習、分享，透過交流讓自己的技能和視野得到更快速的成長。我們相信，一個好的環境能夠激發創意，促進專業能力的提升。<p />
-        <p>我們希望將這樣的場域擴展至高雄，誠摯地邀請您加入我們，一起為開發者打造一個交流與學習的樂園，讓大家在這裡彼此成長，共同推動科技產業的進步。</p>
-        </>)
+      description: (<>我們的目標是凝聚更多開發者，為他們提供一個充滿活力的交流空間。在這裡，開發者可以互相學習、分享，透過交流讓自己的技能和視野得到更快速的成長。我們相信，一個好的環境能夠激發創意，促進專業能力的提升。<br /><br />
+      我們希望將這樣的場域擴展至高雄，誠摯地邀請您加入我們，一起為開發者打造一個交流與學習的樂園，讓大家在這裡彼此成長，共同推動科技產業的進步。
+      </>)
     }
   ]
   const services = [
