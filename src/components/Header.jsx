@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import bannerBg from '../assets/banner/banner-bg.png'
 import rocketLogosm from '../assets/banner/banner-logo-rocket-sm.svg'
 import rocketLogolg from '../assets/banner/banner-logo-rocket-lg.svg'
@@ -20,7 +21,7 @@ function Header() {
         <div className="flex md:hidden flex-col items-center py-15 gap-[46px]">
           <div className="pr-10">
             <div className="max-w-[294px] bg-neutral-white rounded-border-m border-2 border-neutral-300 relative">
-              <a href="#">
+              <Link to="/">
                 <div className="flex items-center mt-6">
                   <img
                     src={ rocketLogosm }
@@ -39,12 +40,12 @@ function Header() {
                   alt="Banner button"
                   className="absolute -right-10 top-7"
                 />
-              </a>
+              </Link>
             </div>
           </div>
           <div className="pr-10">
             <div className="max-w-[294px] bg-neutral-white rounded-border-m border-2 border-neutral-300 relative">
-              <a href="#">
+              <Link to="/coworking">
                 <div className="flex items-center mt-6">
                   <img
                     src={ coworkingLogosm }
@@ -63,13 +64,13 @@ function Header() {
                   alt="Banner button"
                   className="absolute -right-10 top-7"
                 />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
         <div className="hidden md:flex pt-23 pb-25 justify-center items-center">
           <div className="bg-neutral-white rounded-border-l border-2 border-neutral-300 max-w-110 max-h-112 w-full relative">
-            <a href="#" className="flex flex-col items-center">
+            <Link to="/" className="flex flex-col items-center">
               <h1 className="font-bold text-desktop-h1 text-neutral-700 absolute -top-7 left-1/2 -translate-x-1/2 whitespace-nowrap">
                 火箭隊
               </h1>
@@ -91,13 +92,13 @@ function Header() {
                 alt="Rocket button"
                 className="absolute -bottom-15 left-1/2 -translate-x-1/2"
               />
-            </a>
+            </Link>
           </div>
           <span className="text-neutral-700 font-bold text-desktop-h1 self-center my-[34px] ml-[82px] mr-[83px] font-display">
             X
           </span>
           <div className="bg-neutral-white rounded-border-l border-2 border-neutral-300 max-w-110 max-h-112 w-full relative hover:-translate-y-4 duration-500">
-            <a href="#" className="flex flex-col items-center">
+            <Link to="/coworking" className="flex flex-col items-center">
               <h2 className="font-bold text-desktop-h1 text-neutral-700 absolute -top-7 left-1/2 -translate-x-1/2 whitespace-nowrap">
                 共同空間
               </h2>
@@ -119,7 +120,7 @@ function Header() {
                 alt="Rocket button"
                 className="absolute -bottom-15 left-1/2 -translate-x-1/2"
               />
-            </a>
+            </Link>
           </div>
         </div>
       </section>
