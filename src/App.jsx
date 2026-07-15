@@ -1,10 +1,19 @@
+import { Routes, Route } from "react-router";
 import './App.css'
-import CoworkingPage from './assets/CoworkingPage'
+import Header from "./components/Header"
+import CoworkingPage from './pages/CoworkingPage'
+import RocketPage from "./pages/RocketPage";
+import Footer from "./components/Footer"
 
 function App() {
   return (
     <>
-      <CoworkingPage />
+      <Header />
+      <Routes>
+        <Route path="/" element={<RocketPage />} />
+        <Route path="/coworking" element={<CoworkingPage />} />
+      </Routes>
+      <Footer />
     </>
   )
 }
