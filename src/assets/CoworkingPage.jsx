@@ -1,6 +1,7 @@
 import Header from "../components/Header"
 import SpaceIntro from "../components/SpaceIntro"
 import SpaceDescription from "../components/SpaceDescription"
+import SpaceCarousel from "../components/SpaceCarousel"
 import Footer from "../components/Footer"
 
 function CoworkingPage() {
@@ -9,6 +10,7 @@ function CoworkingPage() {
       <Header />
       <SpaceIntro />
       <SpaceDescription />
+      <SpaceCarousel />
       <Footer />
     </>
   )
