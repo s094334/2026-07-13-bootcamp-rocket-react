@@ -60,11 +60,11 @@ const AboutPositons = ({ title, reverse, aboutTitle, positionContent, positionHi
   )
 };
 
-const AboutCoach = ({ img, imgAlt }) => {
+const AboutCoach = ({ img, imgAlt, onSelect }) => {
   return (
-    <a href="#">
+    <button type="button" onClick={ onSelect } className="cursor-pointer">
       <img src={ img } alt={ imgAlt }/>
-    </a>
+    </button>
   )
 }
 
@@ -232,7 +232,7 @@ function AboutTraining() {
     }
   ]
 
-  const [selectedId, setSelectedId] = useState(1);
+  const [selectedId, setSelectedId] = useState(coaches[0].id);
 
   const selectedCoach = coaches.find(
     (coach) => coach.id === selectedId
@@ -270,9 +270,13 @@ function AboutTraining() {
           </h2>
           <div className="flex gap-6 mb-7">
             {
-              coaches.map((coach) => {
-                return <AboutCoach key={ coach.id } { ...coach } />
-              })
+              coaches.map((coach) => (
+                <AboutCoach
+                  key={coach.id}
+                  {...coach}
+                  onSelect={() => setSelectedId(coach.id)}
+                />
+              ))
             }
           </div>
           <h3 className="font-bold text-mobile-h4 md:text-desktop-body1 mb-3">
