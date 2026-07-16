@@ -9,7 +9,7 @@ import coachJustin from "../assets/rocket-page/coach/coach-justin.svg"
 import coachCasper from "../assets/rocket-page/coach/coach-casper.svg"
 import callToAction from "../assets/rocket-page/ic-go-rocket.svg"
 
-const AboutPositons = ({ title, reverse, aboutTitle, positionContent, positionHighlight, requirements, skills, img, imgAlt }) => {
+const ProgramCard = ({ title, reverse, aboutTitle, positionContent, positionHighlight, requirements, skills, img, imgAlt }) => {
   return (
     <div style={{ backgroundImage: `url(${backgroundImage})` }} className="w-full bg-neutral-white text-neutral-700 px-12 pb-[34px] pt-[50px] md:pt-16 md:pb-10 md:pr-20 md:pl-12 md:rounded-border-m border-neutral-200 border-2 relative">
       <div className="inline-block border-2 border-neutral-700 rounded-border-s shadow-[4px_4px_0px_0px_#363636] bg-neutral-white px-5 md:px-10 py-3 absolute -top-8">
@@ -60,7 +60,7 @@ const AboutPositons = ({ title, reverse, aboutTitle, positionContent, positionHi
   )
 };
 
-const AboutCoach = ({ img, imgAlt, onSelect }) => {
+const CoachPhoto = ({ img, imgAlt, onSelect }) => {
   return (
     <button type="button" onClick={ onSelect } className="cursor-pointer">
       <img src={ img } alt={ imgAlt }/>
@@ -260,7 +260,7 @@ function AboutTraining() {
         <div className="max-w-[1076px] w-full flex flex-col gap-20 mt-20">
           {
             programs.map((program)=> {
-              return <AboutPositons key={ program.id } { ...program }/>
+              return <ProgramCard key={ program.id } { ...program }/>
             })
           }
         </div>
@@ -271,7 +271,7 @@ function AboutTraining() {
           <div className="flex gap-6 mb-7">
             {
               coaches.map((coach) => (
-                <AboutCoach
+                <CoachPhoto
                   key={coach.id}
                   {...coach}
                   onSelect={() => setSelectedId(coach.id)}
