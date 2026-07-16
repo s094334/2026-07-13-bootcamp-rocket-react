@@ -2,7 +2,7 @@ import aboutFrontend from '../assets/rocket-page/about/about-rocket-frontend.svg
 import aboutBackend from '../assets/rocket-page/about/about-rocket-backend.svg'
 import aboutUI from '../assets/rocket-page/about/about-rocket-ui.svg'
 
-const AboutPosition = ({ title, skills, enTitle, imgUrl, imgAlt }) => {
+const PositionCard = ({ title, skills, enTitle, imgUrl, imgAlt }) => {
   return (
     <div className="flex flex-col md:flex-row self-start bg-neutral-white rounded-border-l md:max-w-[636px] w-full py-4 md:py-9 md:gap-26">
       <div className="ml-5 md:ml-9 flex flex-col flex-1 justify-between gap-2 md:gap-3">
@@ -77,7 +77,7 @@ function AboutRocket() {
         <div className="flex flex-col gap-8 overflow-y-auto scrollbar-none">
         {
           positions.map((position)=> {
-            return <AboutPosition key={position.id} { ...position }/>
+            return <PositionCard key={position.id} { ...position }/>
           })
         }
         </div>

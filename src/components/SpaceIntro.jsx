@@ -1,7 +1,6 @@
 import mapImgLg from "../assets/space-page/map-lg.png"
 import mapImgSm from "../assets/space-page/map-sm.png" 
 
-
 function SpaceIntro() {
   return (
     <section className="bg-space-200 py-9 px-12 md:py-15 flex flex-col-reverse gap-5 md:flex-row md:gap-24 justify-center items-center text-neutral-700 rounded-border-xl">
