@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import backgroundImage from "../assets/rocket-page/training/training-bg.png"
 import trainingFrontend from "../assets/rocket-page/training/training-img-frontend-lg.svg"
 import trainingBackend from "../assets/rocket-page/training/training-img-backend-lg.svg"
@@ -59,11 +60,11 @@ const AboutPositons = ({ title, reverse, aboutTitle, positionContent, positionHi
   )
 };
 
-const AboutCoach = ({ img, imgAlt }) => {
+const AboutCoach = ({ img, imgAlt, onSelect }) => {
   return (
-    <a href="#">
+    <button type="button" onClick={ onSelect } className="cursor-pointer">
       <img src={ img } alt={ imgAlt }/>
-    </a>
+    </button>
   )
 }
 
@@ -123,28 +124,120 @@ function AboutTraining() {
       imgAlt : "training UI image"
     }
   ];
+
   const coaches = [ 
     {
       id: 1,
       img: coachWeijie,
-      imgAlt: "Weijie image"
+      imgAlt: "Weijie image",
+      role: "前端教練",
+      name: "廖洧杰",
+      experience: [
+        <>2016-2022 過往經歷：<a
+                href="https://www.hexschool.com/"
+                target="_blank"
+                className="underline"
+              >
+                六角學院校長
+              </a>
+              、
+              <a
+                href="https://www.facebook.com/profile.php?id=100039975056467#"
+                target="_blank"
+                className="underline"
+              >
+                高雄火箭隊
+              </a>前端教練</>,
+        "2013-2019 成功案例：協助無資訊背景轉職工程師人數超過 500 位",
+        "2013-2019 授課人數：線上+線下授課學員超過 25,000 位",
+        <>2014-2019 線下授課：
+              <a
+                href="https://www.im.nuk.edu.tw/?page_id=95"
+                target="_blank"
+                className="underline"
+              >
+                高雄大學前端領域兼任講師
+              </a></>,
+        "2007-2019 實務經驗：經手超過 100 個實際專案，其領域不乏中小企業、政府專案、銀行系統"
+      ]
     },
     {
       id: 2,
       img: coachYinmin,
-      imgAlt: "Yinmin image"
+      imgAlt: "Yinmin image",
+      role: "前端教練",
+      name: "穎旻",
+      experience: [
+        "六角學院前端工程師",
+        "六角學院前端講師",
+        "金龍國小教育訓練講師",
+        "國泰產險教育訓練講師"
+      ]
     },
     {
       id: 3,
       img: coachJustin,
       imgAlt: "Justin image",
+      role: "後端教練",
+      name: "賈斯汀",
+      experience: [
+        "高雄市警察局縣市合併內外部整合",
+        "嘉義縣警察局全球資訊網與內部知識網",
+        "總統府全球資訊網系統維護及開發",
+        "總統府 APP 新聞即時通系統開發",
+        "金管會 EIP SSO 整合",
+        "經濟部工業局電子書包加值應用計畫系統規劃、設計開發",
+        "國立海生館活動與報名系統規劃開發",
+        "國立海生館海洋教育網規劃開發",
+        "台灣淨水器材百科商務平台規劃開發",
+        "高雄市小學電子書包試行計畫",
+        "屏東國立海生館活動與報名系統",
+        "屏東國立海生館海洋教育網",
+        "威錦水器材百科補助計畫",
+        "supermediastore（美國購物網站）",
+        "高雄捷運網站",
+        "高雄世運志工服務系統",
+        "高雄市 85 大樓招商網",
+        "高雄市國稅局稅務宣導活動網站",
+        "高雄市民政局業務資訊化委外作業",
+        "高雄市國稅局全球資訊網",
+        "高雄市府衛生局中英全球資訊網",
+        "高雄市新聞處圖文影像管理系統",
+        "高雄市政府文化局中英文網站",
+        "屏東縣政府旅遊網",
+        "屏東縣政府招商網",
+        "行政院南區服務中心網站",
+        "經濟部水利署南區水資源局",
+        "105 年度業務及全球資訊網站維護及功能擴充計畫"
+      ]
     },
     {
       id: 4,
       img: coachCasper,
       imgAlt: "Casper image",
+      role: "UI 教練",
+      name: "卡斯伯",
+      experience: [
+        "2016-2022 過往經歷：六角學院共同創辦人",
+        "2016-2022 近期授課經驗：Vue 3 直播班講師、從 Figma 到 VSCode，設計做到網頁切版",
+        "2013-2016 實務經驗：鴻海軟體工程師，設計師轉職前端工程師，擅長將複雜觀念用圖形化方式呈現",
+        "六屆 IT 鐵人邦獲選紀錄",
+        "Modern Web 研討會講者",
+        "線上課程超過萬人註冊",
+        "研討會經驗-經驗豐富的技術開發者 2017 Modern Web 技術講者",
+        "2021 {Laravel x Vue} Conf 技術講者",
+        "五屆 IT 鐵人賽優選",
+        "技術 Blog - 卡斯伯前端"
+      ]
     }
   ]
+
+  const [selectedId, setSelectedId] = useState(coaches[0].id);
+
+  const selectedCoach = coaches.find(
+    (coach) => coach.id === selectedId
+  )
+
   return (
     <>
       <section className="flex flex-col items-center bg-neutral-100 relative">
@@ -177,50 +270,22 @@ function AboutTraining() {
           </h2>
           <div className="flex gap-6 mb-7">
             {
-              coaches.map((coach) => {
-                return <AboutCoach key={ coach.id } { ...coach } />
-              })
+              coaches.map((coach) => (
+                <AboutCoach
+                  key={coach.id}
+                  {...coach}
+                  onSelect={() => setSelectedId(coach.id)}
+                />
+              ))
             }
           </div>
           <h3 className="font-bold text-mobile-h4 md:text-desktop-body1 mb-3">
-            前端教練 | 廖洧杰
+            { selectedCoach.role } | { selectedCoach.name }
           </h3>
           <ul className="list-disc list-inside font-normal text-desktop-body3 text-neutral-700 [&>li]:pl-4 [&>li]:-indent-4">
-            <li>
-              2016-2022 過往經歷：
-              <a
-                href="https://www.hexschool.com/"
-                target="_blank"
-                className="underline"
-              >
-                六角學院校長
-              </a>
-              、
-              <a
-                href="https://www.facebook.com/profile.php?id=100039975056467#"
-                target="_blank"
-                className="underline"
-              >
-                高雄火箭隊
-              </a>
-              前端教練
-            </li>
-            <li>2013-2019 成功案例：協助無資訊背景轉職工程師人數超過 500 位</li>
-            <li>2013-2019 授課人數：線上+線下授課學員超過 25,000 位</li>
-            <li>
-              2014-2019 線下授課：
-              <a
-                href="https://www.im.nuk.edu.tw/?page_id=95"
-                target="_blank"
-                className="underline"
-              >
-                高雄大學前端領域兼任講師
-              </a>
-            </li>
-            <li>
-              2007-2019 實務經驗：經手超過 100
-              個實際專案，其領域不乏中小企業、政府專案、銀行系統
-            </li>
+            { selectedCoach.experience.map((item, index) => (
+              <li key={ index }>{ item }</li>
+            ))}
           </ul>
         </div>
         <a
