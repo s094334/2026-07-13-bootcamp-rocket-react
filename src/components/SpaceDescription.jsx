@@ -8,7 +8,7 @@ import chatLogo from "../assets/space-page/ic-chat-lg.svg"
 import trafficLogo from "../assets/space-page/ic-traffic-lg.svg"
 import foodLogo from "../assets/space-page/ic-food-lg.svg"
 
-const AboutArea = ({ reverse, img, title, description }) => {
+const AreaFeature = ({ reverse, img, title, description }) => {
   return (
     <div className={`flex flex-col ${ reverse ? "md:flex-row-reverse" : "md:flex-row" } justify-center items-center gap-4 md:gap-10`}>
       <img
@@ -28,7 +28,7 @@ const AboutArea = ({ reverse, img, title, description }) => {
   )
 }
 
-const AboutService = ({ img, title, description }) => {
+const ServiceFeature = ({ img, title, description }) => {
   return (
     <div className="flex items-start md:flex-col md:items-center gap-6 md:px-12">
       <img
@@ -123,7 +123,7 @@ function SpaceDescription() {
       </h3>
       <div className="flex flex-col gap-9">
         { areas.map((area) => {
-          return <AboutArea key={ area.id } { ...area } />})
+          return <AreaFeature key={ area.id } { ...area } />})
         }
         <div className="pt-2 md:pt-10 text-neutral-700">
           <h3 className="font-bold text-mobile-h4 w-fit md:text-desktop-h4 bg-[linear-gradient(to_top,var(--color-rocket-yellow)_50%,transparent_50%)] leading-none my-4 md:mb-6">
@@ -131,7 +131,7 @@ function SpaceDescription() {
           </h3>
           <div className="flex flex-col gap-7 pt-3 md:grid md:grid-cols-3 md:justify-items-center">
             { services.map((service) => {
-              return <AboutService key={ service.id } { ...service }/>
+              return <ServiceFeature key={ service.id } { ...service }/>
             })}
           </div>
         </div>
